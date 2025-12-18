@@ -269,7 +269,8 @@ const Crochetshop = () => {
     <div className="space-y-10">
 
       {/* HERO */}
-      <div className="bg-gradient-to-r from-pink-200 via-pink-300 to-pink-400 rounded-2xl p-10 text-center shadow-lg">
+      <div className="bg-gradient-to-r from-pink-200 via-pink-300 to-pink-400 rounded-2xl p-6 sm:p-8 lg:p-10 text-center shadow-lg">
+
         <h2 className="text-4xl font-bold text-pink-900 mb-3">
           Handmade Crochet Store
         </h2>
@@ -279,7 +280,7 @@ const Crochetshop = () => {
       </div>
 
       {/* CATEGORY FILTER */}
-      <div className="flex flex-wrap gap-3 justify-center">
+      <div className="flex flex-wrap gap-3 justify-center max-w-3xl mx-auto">
         {categories.map(cat => (
           <button
             key={cat.id}
@@ -296,7 +297,7 @@ const Crochetshop = () => {
       </div>
 
       {/* PRODUCTS */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredProducts.map(product => (
           <div
             key={product.id}
@@ -666,12 +667,15 @@ const Crochetshop = () => {
 
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
-        {currentPage === 'home' && renderHome()}
-        {currentPage === 'about' && renderAbout()}
-        {currentPage === 'cart' && renderCart()}
-        {currentPage === 'favorites' && renderFavorites()}
-      </main>
+      <div className="min-h-screen bg-pink-50 overflow-x-hidden">
+     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {currentPage === 'home' && renderHome()}
+      {currentPage === 'cart' && renderCart()}
+      {currentPage === 'favorites' && renderFavorites()}
+      {currentPage === 'about' && renderAbout()}
+  </div>
+</div>
+
 
       {/* Footer */}
       <footer className="bg-gradient-to-r from-pink-50 via-pink-100 to-pink-200 mt-16">
